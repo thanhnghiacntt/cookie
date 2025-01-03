@@ -39,8 +39,26 @@ fileInput.addEventListener('change', function (event) {
 // Tạo nút bấm để kích hoạt input file
 const uploadButton = document.createElement('button');
 uploadButton.textContent = 'Upload File';
-uploadButton.style.margin = '20px';
+uploadButton.style.position = 'fixed'; // Định vị cố định
+uploadButton.style.bottom = '20px';   // Cách phía dưới 20px
+uploadButton.style.left = '20px';    // Cách phía trái 20px
+uploadButton.style.padding = '10px 20px';
+uploadButton.style.backgroundColor = '#007BFF'; // Màu nền xanh
+uploadButton.style.color = '#FFF';   // Màu chữ trắng
+uploadButton.style.border = 'none';
+uploadButton.style.borderRadius = '5px';
+uploadButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+uploadButton.style.cursor = 'pointer';
+uploadButton.style.zIndex = '1000'; // Đảm bảo hiển thị trên các phần tử khác
 document.body.appendChild(uploadButton);
+
+// Thêm hiệu ứng hover cho nút
+uploadButton.addEventListener('mouseover', () => {
+    uploadButton.style.backgroundColor = '#0056b3';
+});
+uploadButton.addEventListener('mouseout', () => {
+    uploadButton.style.backgroundColor = '#007BFF';
+});
 
 // Kích hoạt input file khi nhấn nút
 uploadButton.addEventListener('click', function () {
